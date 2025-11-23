@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Dios que me espera en el pozo</title>
+    <!-- 1. Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2. Carga de Fuente (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- 3. Configuración de Tailwind (para fuente y colores) -->
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Inter', 'sans-serif'],
+                },
+                colors: {
+                    'brand-primary': '#00F0FF', // Un cian disruptivo
+                    'brand-secondary': '#FF00A8', // Un magenta
+                    'gray-dark': '#111827',
+                    'gray-medium': '#1F2937',
+                    'gray-light': '#374151',
+                }
+            }
+        }
+    }
+    </script>
+    <!-- 4. Estilos CSS personalizados -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0B0B; /* Casi negro total para el fondo */
+            color: #E0E0E0;
+        }
+        /* Estilo para el header (efecto gradiente) */
+        .header-splash {
+            background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(0, 0, 0, 1) 100%), 
+                        url('https://placehold.co/1200x600/111827/374151?text=El+Pozo') center/cover no-repeat;
+            background-blend-mode: multiply;
+        }
+        /* Estilo para los <details> (expandibles) */
+        details > summary {
+            list-style: none; /* Quita la flecha default */
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            background-color: #1F2937; /* gray-medium */
+            border-radius: 12px;
+            font-weight: 700;
+            color: #00F0FF; /* brand-primary */
+            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        details > summary::-webkit-details-marker {
+            display: none; /* Quita la flecha en Safari */
+        }
+        details > summary:hover {
+            background-color: #374151; /* gray-light */
+        }
+        /* Icono + y - para el <summary> */
+        details > summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #00F0FF;
+            transition: transform 0.3s ease-out;
+        }
+        details[open] > summary::after {
+            content: '−'; /* Signo menos */
+            transform: rotate(180deg);
+        }
+        details[open] {
+            border: 1px solid #00F0FF;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        details[open] > summary {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .content-box {
+            background-color: #1F2937;
+            padding: 1.5rem;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        /* Estilo para las tarjetas de contenido */
+        .card {
+            background-color: #111827; /* gray-dark */
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.05);
+            border: 1px solid #374151;
+        }
+        .card-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            border-left: 4px solid #00F0FF;
+            padding-left: 1rem;
+        }
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #D1D5DB;
+        }
+        blockquote {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            border-left: 4px solid #FF00A8; /* brand-secondary */
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ==== HEADER / INTRO ==== -->
+    <header class="header-splash text-white text-center p-12 md:p-24 shadow-lg">
+        <h1 class="text-4xl md:text-7xl font-black uppercase tracking-wider">El Dios</h1>
+        <h2 class="text-2xl md:text-4xl font-light text-brand-primary mt-2">Que me espera en el pozo</h2>
+        <p class="max-w-3xl mx-auto mt-6 text-lg md:text-xl text-gray-300">
+            Una guía interactiva sobre la charla más disruptiva de Jesús: el encuentro en el pozo de Sicar (Juan 4).
+        </p>
+    </header>
+
+    <!-- ==== CONTENIDO PRINCIPAL ==== -->
+    <main class="container mx-auto p-6 md:p-12 max-w-5xl">
+
+        <!-- 1. INTRODUCCIÓN (La Historia Puente) -->
+        <section class="card">
+            <h3 class="card-title">El Viaje "Equivocado"</h3>
+            <p>
+                ¿Alguna vez sentiste que estás en el lugar equivocado, a la hora equivocada?
+                <br><br>
+                Imagina esto: Estás agotado, con sed, y para colmo, estás en el barrio "peligroso", ese lugar que tu familia te dijo: "Por ahí, ni pases". Todos te están mirando raro. Sientes el peso de las miradas.
+                <br><br>
+                Jesús estaba ahí. Cansado del viaje, se sienta junto a un pozo. Pero Jesús nunca hace nada por casualidad. No estaba en el lugar equivocado, estaba en el lugar <strong class="text-brand-primary">designado</strong>.
+                Él no fue a Samaria "de paso", fue con una cita agendada en la eternidad.
+            </p>
+        </section>
+
+        <!-- 2. CONTEXTO HISTÓRICO (Los Muros Invisibles) -->
+        <section class="card">
+            <h3 class="card-title">Muros Más Altos que Ladrillos</h3>
+            <p>
+                Para entender esta charla, hay que entender el odio. Era un odio de siglos.
+            </p>
+            <ul class="list-disc list-inside mt-4 space-y-2 text-lg text-gray-300">
+                <li><strong class="text-white">El Muro Racial:</strong> Judíos y Samaritanos. Se detestaban. Los judíos consideraban a los samaritanos "sangre sucia", impuros.</li>
+                <li><strong class="text-white">El Muro de Género:</strong> Un rabino (maestro) jamás hablaba en público con una mujer que no fuera su esposa o familia. Era un escándalo.</li>
+                <li><strong class="text-white">El Muro Moral:</strong> Esta mujer era la "excluida" de los excluidos. Iba al pozo a mediodía (la peor hora, sol a plomo) para no cruzarse con las otras mujeres que la juzgaban.</li>
+            </ul>
+            <p class="mt-4">
+                Jesús, al sentarse ahí, estaba dinamitando esos tres muros de un solo golpe.
+            </p>
+        </section>
+
+        <!-- 3. LA CHARLA (Pasajes Expandibles) -->
+        <section class="card">
+            <h3 class="card-title">La Conversación</h3>
+            <p class="mb-8">
+                Aquí es donde todo explota. La charla no empieza con un sermón, empieza con un pedido simple y revolucionario.
+            </p>
+
+            <div class="space-y-6">
+
+                <!-- PASAJE 1: El Pedido -->
+                <details>
+                    <summary>Pasaje 1: "Dame de beber" (Juan 4:7-9)</summary>
+                    <div class="content-box text-gray-300 text-lg leading-relaxed space-y-4">
+                        <p>Vino una mujer de Samaria a sacar agua; y Jesús le dijo: <strong class="text-white">Dame de beber.</strong></p>
+                        <p>(Pues sus discípulos habían ido a la ciudad a comprar de comer.)</p>
+                        <p>La mujer samaritana le dijo: <strong class="text-brand-primary">¿Cómo tú, siendo judío, me pides a mí de beber, que soy mujer samaritana?</strong> (Porque judíos y samaritanos no se tratan entre sí).</p>
+                        <p class="mt-4 p-4 bg-gray-dark rounded-lg border-l-4 border-brand-primary">
+                            <strong class="text-white">Punto Clave:</strong> Jesús rompe el protocolo. Él, que es el Agua Viva, pide agua. Inicia la conversación vulnerable. No la trata como "impura", la trata como a una persona.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- PASAJE 2: El Agua Viva -->
+                <details>
+                    <summary>Pasaje 2: El Regalo de Dios (Juan 4:10-14)</summary>
+                    <div class="content-box text-gray-300 text-lg leading-relaxed space-y-4">
+                        <p>Respondió Jesús y le dijo: Si conocieras el don de Dios, y quién es el que te dice: Dame de beber; tú le pedirías, y él te daría <strong class="text-brand-primary">agua viva.</strong></p>
+                        <p>La mujer le dijo: Señor, no tienes con qué sacarla, y el pozo es hondo. ¿De dónde, pues, tienes el agua viva? (...)
+                        Respondió Jesús y le dijo: Cualquiera que bebiere de esta agua, volverá a tener sed; mas el que bebiere del agua que yo le daré, no tendrá sed jamás; sino que el agua que yo le daré será en él una fuente de agua que salte para vida eterna.</p>
+                        <p class="mt-4 p-4 bg-gray-dark rounded-lg border-l-4 border-brand-primary">
+                            <strong class="text-white">Punto Clave:</strong> La mujer está pensando en lo físico (agua del pozo, H2O). Jesús le está hablando de lo espiritual (sed del alma). Ella busca llenar un cántaro, Jesús quiere llenar su vida.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- PASAJE 3: La Verdad (Los 5 Maridos) -->
+                <details>
+                    <summary>Pasaje 3: "Ve, llama a tu marido" (Juan 4:15-18)</summary>
+                    <div class="content-box text-gray-300 text-lg leading-relaxed space-y-4">
+                        <p>La mujer le dijo: Señor, dame esa agua, para que no tenga yo sed, ni venga aquí a sacarla.</p>
+                        <p>Jesús le dijo: Ve, llama a tu marido, y ven acá.</p>
+                        <p>Respondió la mujer y dijo: <strong class="text-brand-secondary">No tengo marido.</strong></p>
+                        <p>Jesús le dijo: Bien has dicho: No tengo marido; porque <strong class="text-white">cinco maridos has tenido, y el que ahora tienes no es tu marido;</strong> esto has dicho con verdad.</p>
+                        <p class="mt-4 p-4 bg-gray-dark rounded-lg border-l-4 border-brand-primary">
+                            <strong class="text-white">Punto Clave: ¡BOOM!</strong> Esto no es un juicio, es un diagnóstico. Jesús no le dice "pecadora", le dice "te veo". Expone su dolor, su búsqueda fallida de amor en lugares equivocados. No la condena, la conoce. Y para ella, ser conocida así... era ser amada.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- PASAJE 4: La Adoración -->
+                <details>
+                    <summary>Pasaje 4: Adoradores en Espíritu y Verdad (Juan 4:23-26)</summary>
+                    <div class="content-box text-gray-300 text-lg leading-relaxed space-y-4">
+                        <p>(Después que ella lo reconoce como profeta, cambia de tema a la religión...)</p>
+                        <p>Mas la hora viene, y ahora es, cuando los verdaderos adoradores adorarán al Padre <strong class="text-white">en espíritu y en verdad;</strong> porque también el Padre tales adoradores busca que le adoren. (...)
+                        Le dijo la mujer: Sé que ha de venir el Mesías, llamado el Cristo; cuando él venga nos declarará todas las cosas.</p>
+                        <p>Jesús le dijo: <strong class="text-brand-primary text-2xl font-bold">Yo soy, el que habla contigo.</strong></ar>
+                        <p class="mt-4 p-4 bg-gray-dark rounded-lg border-l-4 border-brand-primary">
+                            <strong class="text-white">Punto Clave:</strong> Esta es la revelación más grande. A la mujer con el peor currículum, Jesús le da la primicia que no le dio ni a los sacerdotes: "El Mesías soy Yo". La adoración no se trata de un monte o un templo (lo externo), se trata del corazón (lo interno).
+                        </p>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <!-- 4. LA TRANSFORMACIÓN (Soltar el Cántaro) -->
+        <section class="card">
+            <h3 class="card-title">Soltar el Cántaro</h3>
+            
+            <blockquote>
+                "Entonces la mujer dejó su cántaro, y fue a la ciudad, y dijo a los hombres: Venid, ved a un hombre que me ha dicho todo cuanto he hecho. ¿No será éste el Cristo?"
+                <cite class="block text-lg text-gray-400 mt-2 text-right">— Juan 4:28-29</cite>
+            </blockquote>
+
+            <p class="mt-6">
+                ¡Esto es tremendo! El cántaro representaba su rutina, su vergüenza, su identidad rota. ¡Lo suelta! Ya no le importa el agua física, encontró el Agua Viva.
+                <br><br>
+                Y mira la locura: la mujer que no quería que la vieran, ahora corre a la ciudad. La que no tenía autoridad moral, ahora es la primera evangelista de Samaria. No predica desde su perfección, predica desde su herida sanada: <strong class="text-brand-primary">"¡Me dijo todo lo que he hecho!"</strong>.
+            </p>
+        </section>
+
+        <!-- 5. REFLEXIÓN (El Pozo Personal) -->
+        <section class="card border-2 border-brand-secondary shadow-2xl shadow-brand-secondary/20">
+            <h3 class="card-title" style="border-color: #FF00A8;">Tu Pozo y Tu Cántaro</h3>
+            <p class="mb-8">
+                Esta historia no pasó hace 2000 años. Pasa hoy, en tu casa, en tu trabajo, en tu corazón.
+                La charla familiar es para preguntarnos:
+            </p>
+
+            <ul class="space-y-6 text-lg">
+                <li class="flex items-start">
+                    <span class="text-brand-primary font-black text-3xl mr-4">1</span>
+                    <div>
+                        <strong class="text-white">¿Cuál es tu "Pozo de Mediodía"?</strong>
+                        <br>
+                        ¿Cuál es esa área de tu vida que escondes? ¿Esa rutina que haces a escondidas para que nadie te juzgue?
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-primary font-black text-3xl mr-4">2</span>
+                    <div>
+                        <strong class="text-white">¿Cuáles son tus "5 Maridos"?</strong>
+                        <br>
+                        No tiene que ser literal. ¿En dónde has estado buscando llenar tu sed? ¿En el trabajo, en el éxito, en las relaciones, en las redes sociales... y sigues vacío?
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-brand-primary font-black text-3xl mr-4">3</span>
+                    <div>
+                        <strong class="text-white">¿Qué "Cántaro" tienes que soltar?</strong>
+                        <br>
+                        ¿Qué es eso que cargas todos los días por obligación o vergüenza, que Jesús te está pidiendo que sueltes para poder correr libre?
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="text-center p-10 text-gray-500 border-t border-gray-light mt-12">
+        <p>Una charla basada en Juan 4.</p>
+        <p>Jesús no vino a buscar gente perfecta. Vino a buscarte a ti.</p>
+    </footer>
+
+</body>
+</html>
+
+
